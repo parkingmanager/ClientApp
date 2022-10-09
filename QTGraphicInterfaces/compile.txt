@@ -1,0 +1,23 @@
+python -m PyQt5.uic.pyuic -x QTGraphicInterfaces/MasterMainInterface.ui -o QTGraphicInterfaces/MasterMainInterface.py
+
+python -m PyQt5.uic.pyuic -x QTGraphicInterfaces/DynamicMainInterface.ui -o QTGraphicInterfaces/DynamicMainInterface.py
+
+python -m PyQt5.uic.pyuic -x QTGraphicInterfaces/CompactInterface.ui -o QTGraphicInterfaces/CompactInterface.py
+
+python -m PyQt5.uic.pyuic -x QTGraphicInterfaces/TestFormLayout.ui -o QTGraphicInterfaces/TestFormLayout.py
+
+python -m PyQt5.uic.pyuic -x QTGraphicInterfaces/DynamicMainInterfaceForm.ui -o QTGraphicInterfaces/DynamicMainInterfaceForm.py
+
+python -m PyQt5.uic.pyuic -x QTGraphicInterfaces/MainMenu.ui -o QTGraphicInterfaces/MainMenu.py
+
+python -m PyQt5.uic.pyuic -x QTGraphicInterfaces/Editor.ui -o QTGraphicInterfaces/Editor.py
+
+python -m PyQt5.uic.pyuic -x QTGraphicInterfaces/Maqueta.ui -o QTGraphicInterfaces/Maqueta.py
+
+python -m PyQt5.uic.pyuic -x QTGraphicInterfaces/TransactionsInterface.ui -o QTGraphicInterfaces/TransactionsInterface.py
+
+python -m PyQt5.uic.pyuic -x QTGraphicInterfaces/VehicleForm.ui -o QTGraphicInterfaces/VehicleForm.py
+
+python -m PyQt5.uic.pyuic -x QTGraphicInterfaces/TransactionsInterfaceNew.ui -o QTGraphicInterfaces/TransactionsInterfaceNew.py
+
+python -m PyQt5.uic.pyuic -x QTGraphicInterfaces/Stats.ui -o QTGraphicInterfaces/Stats.py

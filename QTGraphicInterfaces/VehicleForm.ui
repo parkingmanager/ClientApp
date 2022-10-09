@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VehicleForm</class>
+ <widget class="QMainWindow" name="VehicleForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>477</width>
+    <height>425</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Vehiculo</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+	background-color: #4a26fd;
+	border-radius:5px;
+	border: 1px solid  #4a26fd;
+	font:  8pt &quot;FontAwesome&quot; ; 
+	color: #ffffff
+
+}
+
+QPushButton:Hover{	
+	background-color :#021aee
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="formLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>431</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="txb_plate"/>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLabel" name="lbl_class">
+       <property name="text">
+        <string>Clase</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="txb_class"/>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLabel" name="lbl_brand">
+       <property name="text">
+        <string>Marca</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="txb_brand"/>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLabel" name="lbl_line">
+       <property name="text">
+        <string>Linea</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLineEdit" name="txb_line"/>
+     </item>
+     <item row="10" column="1">
+      <widget class="QLabel" name="lbl_model">
+       <property name="text">
+        <string>Modelo</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <widget class="QLineEdit" name="txb_model"/>
+     </item>
+     <item row="12" column="1">
+      <widget class="QLabel" name="lbl_color">
+       <property name="text">
+        <string>Color</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="1">
+      <widget class="QLineEdit" name="txb_color"/>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="lbl_plate">
+       <property name="text">
+        <string>Placa</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="lbl_title">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>0</y>
+      <width>381</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>22</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Información del vehículo</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_ok">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>360</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Aceptar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_cancel">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>360</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cancelar</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
