@@ -131,7 +131,9 @@ class Transaction(QtWidgets.QMainWindow):
             cv2.imwrite(file_name, image)
 
     def process_card(self, frame):
-
+        """
+            Preprocesamiento Imágen Licencia
+        """
         #Transaction.save_image('0 Original', frame)
         image = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         #Transaction.save_image('1 Blanco y negro', image)
@@ -147,22 +149,16 @@ class Transaction(QtWidgets.QMainWindow):
         th3 = cv2.adaptiveThreshold(GB, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 11, 2)
         #Transaction.save_image('5 Adaptative threshold', th3)
         th3 = cv2.morphologyEx(th3, cv2.MORPH_OPEN, kernelopening)
-        #Transaction.save_image('6 Transf morfologica open', th3)
-        # erosion = cv2.erode(th3, kernelopening, iterations=3)
-        # Transaction.save_image('7 Erosion', erosion)
-        # th4 = cv2.morphologyEx(erosion, cv2.MORPH_GRADIENT, kernelopening)
-        # closing = cv2.morphologyEx(th3, cv2.MORPH_CLOSE, kernel)
-        # kernel = np.ones((2, 2), np.uint8)
-        # th4 = cv2.dilate(th4, kernel, iterations=2)
-        # erosion = cv2.erode(th3,kernel,iterations = 3)
-        # GB = cv2.GaussianBlur(image, (5, 5), 1)
+        """
+            Obtención contorno externo
+        """
         contornos, hierachy = cv2.findContours(th3, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
         frame_contornos = cv2.drawContours(frame, contornos, -1, (0, 255, 0), 3)
-        #Transaction.save_image('7 contornos', frame_contornos)
-
+        #Transaction.save_image('7 contornos', frame_contornos
         c = max(contornos, key=cv2.contourArea)
         x, y, w, h = cv2.boundingRect(c)
+        
+        ####Método de Aproximación Geométrico######
         epsilon = 0.01 * cv2.arcLength(c, True)
         aprox = cv2.approxPolyDP(c, epsilon, True)
 
@@ -173,23 +169,24 @@ class Transaction(QtWidgets.QMainWindow):
         c3 = coords[2]
         c4 = coords[3]
 
-        # Transformación de perspectivas
+   
+        ####Transformada de Perspectiva####
+
         tc = np.float32([c4, c1, c3, c2])
         perspective_zone = np.float32([[0, 0], [800, 0], [0, 497], [800, 497]])
         m = cv2.getPerspectiveTransform(tc, perspective_zone)
         transformed = cv2.warpPerspective(frame, m, (800, 497))
         #Transaction.save_image('9 perspectiva', transformed)
-
         transformed = cv2.cvtColor(transformed, cv2.COLOR_BGR2GRAY)
-
         plate_img = transformed[141:220, 0:144]
         #ret, plate_img = cv2.threshold(plate_img, 70, 255, cv2.THRESH_BINARY)
-
+        
+        ###LECTURA OCR####
         #cv2.imshow("plate_img", plate_img)
         plate_text = pytesseract.image_to_string(plate_img, lang="spa", config=custom_config)
-
         cleaned_plate = re.findall('[A-Z]{3}[0-9]{3}|[A-Z]{3}[0-9]{2}[A-Z]{1}', plate_text)
-
+        
+        ###TRANSACCIÓN INFORMACIÓN####
         vt = VehicleTransaction()
         vt.IdLote = self.parking_id
 
