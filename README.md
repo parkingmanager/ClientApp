@@ -1,4 +1,4 @@
-Este proyecto se integra a través de 4 repositorios:
+El proyecto Parking Manager se integra a través de 4 repositorios:
 
 * [DataBase](https://github.com/parkingmanager/RestAPI)
 * [RestAPI](https://github.com/parkingmanager/RestAPI)
