@@ -27,10 +27,10 @@ El código fuente descrito en este repositorio está desarrollado en Python y pe
  * [Models](https://github.com/parkingmanager/ClientApp/tree/main/Models): Sección para adquirir la información que debe ser almacenada durante un proceso específico.
  * [QTGraphicInterfaces](https://github.com/parkingmanager/ClientApp/tree/main/QTGraphicInterfaces): Se almacena el código fuente de la interfaz gráfica.
  * [Windows](https://github.com/parkingmanager/ClientApp/tree/main/Windows): Contiene los códigos fuentes de las principales funciones de la aplicación como:
-   * Edición (Editor.py)
-   * Transacción (Transactions.py y TransactionsForm.py)
-   * Monitoreo (Visor.py). El código fuente para la extracción de datos de entrenamiento y el de entrenamiento de la CNN puede encontrarlo en el reporsitorio de [Utils](https://github.com/parkingmanager/Utils.git)
-   * Estadísticas (Stats.py)
+   * Edición (Editor.py). Calibración y obtención coordenadas.
+   * Transacción (Transactions.py y TransactionsForm.py). Através de OCR o teclado se obtienen características del vehículo ejerciendo un control administrativo sobre el tiempo de uso. 
+   * Monitoreo (Visor.py). Predicción de estado de los espacios a través de una CNN. El código fuente para la extracción de datos de entrenamiento y el código de entrenamiento de la CNN puede encontrarlo en el reporsitorio de [Utils](https://github.com/parkingmanager/Utils.git)
+   * Estadísticas (Stats.py). Uso de información extraída a través del monitoreo y de las transacciones.
  * [Main](https://github.com/parkingmanager/ClientApp/blob/main/main.py): Como el archivo que mapea la información y desde el cual se corre el proyecto.
  
  ### Herramientas de Implementación
