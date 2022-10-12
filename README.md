@@ -1,6 +1,8 @@
 # ClientApp
 Aplicación Python de escritorio del proyecto Parking Manager
 
+# Aplicación Cliente
+
 El código fuente descrito en este repositorio está desarrollado en Python y permite realizar la digitalización, procesamiento y análisis para construir el bloque de información que será tramitado a través del API REST.
 <p align="center">
  <img src="https://user-images.githubusercontent.com/82679673/195241927-977681a5-ffcf-4b75-8109-a04575332359.jpg" width=500><br><sub>
@@ -14,22 +16,22 @@ El código fuente descrito en este repositorio está desarrollado en Python y pe
 
 ### Descripción 
  El repositorio cuenta con:
-* Bussiness: Una capa de negociación donde se analiza y estructura la información, para que pueda ser adaptada a la capa de integración.
-* Filters: En esta carpeta se diseñan las secciones de filtrado y procesamiento a través de:
+* [Bussiness](https://github.com/parkingmanager/ClientApp/tree/main/Bussiness): Una capa de negociación donde se analiza y estructura la información, para que pueda ser adaptada a la capa de integración.
+* [Filters](https://github.com/parkingmanager/ClientApp/tree/main/Filters): En esta carpeta se diseñan las secciones de filtrado y procesamiento a través de:
   * Delimitación (Delimite.py): Se eligen manualmente las ROI sobre las cuales se aplicará el procesamiento.
   * Color (Color.py): En formato HSV se alteran las propiedades de colorimetría del Frame.
   * Transformada Libre o manual (Transform.py): Con los datos extraídos de un pixel en la imagen bicolor, se logra eliminar una zona específica o diseñar unan figura a través de líneas rectas.
   * Transformada de perspectiva y de Hough (TPerspective.py): Aplicando la transformada de perspectiva para cada ROI generada de forma manual, se busca aplica la Transformada de Hough, la cual permite reconstruir figuras geométricas, en este caso líneas rectas.
   * Búsqueda (SpaceConfig.py): Manualmente se seleccionan los espacios que se caracterizan como uso exclusivo.
  Integration: La capa de integración es la encarga de acoplar la aplicación al API REST.
- * Models: Sección para adquirir la información que debe ser almacenada durante un proceso específico.
- * QTGraphicInterfaces: Se almacena el código fuente de la interfaz gráfica.
- * Windows: Contiene los códigos fuentes de las principales funciones de la aplicación como:
+ * [Models](https://github.com/parkingmanager/ClientApp/tree/main/Models): Sección para adquirir la información que debe ser almacenada durante un proceso específico.
+ * [QTGraphicInterfaces](https://github.com/parkingmanager/ClientApp/tree/main/QTGraphicInterfaces): Se almacena el código fuente de la interfaz gráfica.
+ * [Windows](https://github.com/parkingmanager/ClientApp/tree/main/Windows): Contiene los códigos fuentes de las principales funciones de la aplicación como:
    * Edición (Editor.py)
    * Transacción (Transactions.py y TransactionsForm.py)
-   * Monitoreo (Visor.py)
+   * Monitoreo (Visor.py). El código fuente para la extracción de datos de entrenamiento y el de entrenamiento de la CNN puede encontrarlo en el reporsitorio de [Utils](https://github.com/parkingmanager/Utils.git)
    * Estadísticas (Stats.py)
- * Main: Como el archivo que mapea la información y desde el cual se corre el proyecto.
+ * [Main](https://github.com/parkingmanager/ClientApp/blob/main/main.py): Como el archivo que mapea la información y desde el cual se corre el proyecto.
  
  ### Herramientas de Implementación
  
@@ -40,7 +42,7 @@ El código fuente descrito en este repositorio está desarrollado en Python y pe
 
 #### Instalar Interprete
 
-1. Descargamos el archivo .yml que se encuentra en la carpeta de Enviroments.
+1. Descargamos el archivo .yml que se encuentra en la carpeta de [ClientApp/Environments](https://github.com/parkingmanager/ClientApp/tree/main/Environments)
 2. Se realiza la instalación del entorno o interprete. Esta se lleva a cabo en Anaconda 3. 
  <p align="center">
  <img src="https://user-images.githubusercontent.com/82679673/195238349-d48a10d9-ac3d-4af9-ac9e-4d94ae711dc1.jpg" width=500><br><sub>
@@ -71,7 +73,7 @@ El código fuente descrito en este repositorio está desarrollado en Python y pe
 <img src="https://user-images.githubusercontent.com/82679673/195239544-3e5e4d53-af50-470b-b3b6-dfbc2f1046a5.jpg" width=500><br><sub>
 </p>
 
-#### Abrir Proyecto 
+#### Visite los repositorios de [DB](https://github.com/parkingmanager/Database.git) y [RestAPI](https://github.com/parkingmanager/RestAPI.git) para poder correr el proyecto.
 
 
 
