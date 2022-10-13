@@ -34,10 +34,17 @@ QPushButton:Hover{
       <x>20</x>
       <y>60</y>
       <width>431</width>
-      <height>291</height>
+      <height>304</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="1">
+      <widget class="QLabel" name="lbl_plate">
+       <property name="text">
+        <string>Placa</string>
+       </property>
+      </widget>
+     </item>
      <item row="2" column="1">
       <widget class="QLineEdit" name="txb_plate"/>
      </item>
@@ -49,7 +56,11 @@ QPushButton:Hover{
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QLineEdit" name="txb_class"/>
+      <widget class="QComboBox" name="txb_class_2">
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
      <item row="6" column="1">
       <widget class="QLabel" name="lbl_brand">
@@ -91,13 +102,6 @@ QPushButton:Hover{
      <item row="13" column="1">
       <widget class="QLineEdit" name="txb_color"/>
      </item>
-     <item row="0" column="1">
-      <widget class="QLabel" name="lbl_plate">
-       <property name="text">
-        <string>Placa</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
    <widget class="QLabel" name="lbl_title">
@@ -122,7 +126,7 @@ QPushButton:Hover{
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>360</y>
+      <y>370</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -135,7 +139,7 @@ QPushButton:Hover{
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>360</y>
+      <y>370</y>
       <width>75</width>
       <height>23</height>
      </rect>

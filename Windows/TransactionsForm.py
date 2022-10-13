@@ -22,6 +22,8 @@ class TransactionsForm(QtWidgets.QMainWindow):
         self.vehicle_info = VehicleTransaction.VehicleTransaction()
         self.vehicle_info.IdLote = parking_id
         self.transaction_context = transaction_context
+        self.fill_class()
+
         self.ui.btn_ok.clicked.connect(lambda callback: self.save())
         self.ui.btn_cancel.clicked.connect(lambda callback: self.close())
 
@@ -30,7 +32,8 @@ class TransactionsForm(QtWidgets.QMainWindow):
 
             self.vehicle_info: VehicleTransaction = info
             self.ui.txb_plate.setText(TransactionsForm.check_if_valid_param(info.Placa))
-            self.ui.txb_class.setText(TransactionsForm.check_if_valid_param(info.Clase))
+            # self.ui.txb_class.setText(TransactionsForm.check_if_valid_param(info.Clase))
+            self.ui.txb_class_2.setEditText(TransactionsForm.check_if_valid_param(info.Clase))
             self.ui.txb_brand.setText(TransactionsForm.check_if_valid_param(info.Marca))
             self.ui.txb_line.setText(TransactionsForm.check_if_valid_param(info.Linea))
             self.ui.txb_model.setText(TransactionsForm.check_if_valid_param(info.Modelo))
@@ -38,7 +41,7 @@ class TransactionsForm(QtWidgets.QMainWindow):
 
     def save(self):
         self.vehicle_info.Placa = self.ui.txb_plate.text()
-        self.vehicle_info.Clase = self.ui.txb_class.text()
+        self.vehicle_info.Clase = self.ui.txb_class_2.currentText()
         self.vehicle_info.Marca = self.ui.txb_brand.text()
         self.vehicle_info.Linea = self.ui.txb_line.text()
         self.vehicle_info.Modelo = self.ui.txb_model.text()
@@ -102,6 +105,28 @@ El tiempo excedido genera cobro
         """
         self.transaction_context.print_transaction(text)
         self.close()
+
+    def fill_class(self):
+        self.ui.txb_class_2.addItem('AUTOMOVIL')
+        self.ui.txb_class_2.addItem('BUS')
+        self.ui.txb_class_2.addItem('BUSETA')
+        self.ui.txb_class_2.addItem('CAMION')
+        self.ui.txb_class_2.addItem('CAMIONETA')
+        self.ui.txb_class_2.addItem('CAMPERO')
+        self.ui.txb_class_2.addItem('MICROBUS')
+        self.ui.txb_class_2.addItem('TRACTOCAMION')
+        self.ui.txb_class_2.addItem('MOTOCICLETA')
+        self.ui.txb_class_2.addItem('MOTOCARRO')
+        self.ui.txb_class_2.addItem('MOTOTRICICLO')
+        self.ui.txb_class_2.addItem('CUATRIMOTO')
+        self.ui.txb_class_2.addItem('REMOLQUE')
+        self.ui.txb_class_2.addItem('SEMIREMOLQUE')
+        self.ui.txb_class_2.addItem('VOLQUETA')
+        self.ui.txb_class_2.addItem('SIN CLASE')
+        self.ui.txb_class_2.addItem('MAQ. CONSTRUCCION O MINERA')
+        self.ui.txb_class_2.addItem('CICLOMOTOR')
+        self.ui.txb_class_2.addItem('TRICIMOTO')
+        self.ui.txb_class_2.addItem('CUADRICICLO')
 
     @staticmethod
     def check_if_valid_param(value):
