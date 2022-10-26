@@ -45,6 +45,9 @@ El código fuente descrito en este repositorio está desarrollado en Python y pe
  | [<img src="https://user-images.githubusercontent.com/82679673/195237078-29332f54-0a5c-401e-bfba-48da95a3fd24.png" width=100 height=80><br><sub>PyCharm 2021.2.3 </sub>](https://www.jetbrains.com/pycharm/download/#section=windows) |  [<img src="https://user-images.githubusercontent.com/82679673/195236725-db9ef122-ccfe-4762-93d6-906e386a51db.png" width=115><br><sub>PyQT5</sub>](https://build-system.fman.io/qt-designer-download)|  [<img src="https://user-images.githubusercontent.com/82679673/195236726-7545f608-73a5-43b8-a1ea-f4c263f5316b.png" width=145 height=80><br><sub>Anaconda 3 2021.05</sub>](https://www.anaconda.com/products/distribution) |
 | :---: | :---: | :---: |
 
+El tesseract usado es instalado directamente al Windows, y se tomó como referencia la documentación registrada por la Unversidad de Mannheim en Github: 
+[link del github tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
+
 ### Instalación.
 
 #### Instalar Interprete
